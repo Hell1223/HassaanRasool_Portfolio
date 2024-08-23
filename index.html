@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lora:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Lora', serif;
+        }
+
+        /* Sticky Navbar */
+        .sticky {
+            position: sticky;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 100;
+        }
+
+        /* Hero Background */
+        .hero-bg {
+            background-image: url('file:///C:/Users/Hassaan%20PC/OneDrive/Desktop/NewPortfolio/bg_image.png');
+            background-size: cover;
+            background-position: center;
+            background-color: rgba(0, 0, 0, 0.4);
+            background-blend-mode: overlay;
+        }
+
+        /* Hover effects for buttons and cards */
+        .btn-hover:hover {
+            transform: scale(1.05);
+            background-color: #2563eb;
+        }
+
+        .card-hover:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Fade In Animation */
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Dynamic Text Animation */
+        .dynamic-text span {
+            display: inline-block;
+            opacity: 0;
+            animation: fadeInOut 12s infinite;
+        }
+
+        @keyframes fadeInOut {
+
+            0%,
+            100% {
+                opacity: 0;
+            }
+
+            20%,
+            80% {
+                opacity: 1;
+            }
+        }
+
+        .dynamic-text span:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .dynamic-text span:nth-child(2) {
+            animation-delay: 4s;
+        }
+
+        .dynamic-text span:nth-child(3) {
+            animation-delay: 8s;
+        }
+
+        /* Form Focus Styling */
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #1d4ed8;
+            box-shadow: 0 0 0 2px rgba(29, 78, 216, 0.2);
+        }
+
+        /* Card and Button Color Contrast Improvement */
+        .bg-primary {
+            background-color: #1f2937;
+            /* Dark grey background for the buttons */
+        }
+
+        .text-highlight {
+            color: #f3f4f6;
+            /* Light grey for text */
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #111827;
+            color: #d1d5db;
+            padding: 3rem 1.5rem;
+        }
+
+        footer a {
+            color: #60a5fa;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #2563eb;
+        }
+
+        /* Responsive Design Adjustments */
+        @media (max-width: 768px) {
+            .text-8xl {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-100">
+    <!-- Sticky Navbar -->
+    <nav class="sticky px-6 py-4 bg-gray-900 text-white flex justify-between items-center">
+        <div class="text-xl font-bold">Hassaan Rasool</div>
+        <ul class="flex space-x-6">
+            <li><a href="#about" class="hover:text-blue-500">About</a></li>
+            <li><a href="#services" class="hover:text-blue-500">Services</a></li>
+            <li><a href="#clients" class="hover:text-blue-500">Clients</a></li>
+            <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative hero-bg h-[800px] md:h-[600px] sm:h-[400px] flex items-center">
+        <div class="text-left pl-10 text-8xl text-gray-300 font-bold leading-tight animate-fadeInUp">
+            <span>Hassaan <br /> Rasool</span>
+            <div class="text-xl text-white mt-4 dynamic-text">
+                <span id="1">Web Developer,</span>
+                <span id="2"> Front-end Developer,</span>
+                <span id="3"> Web Designer.</span>
+            </div>
+            <div class="mt-4">
+                <a href="#"
+                    class="text-xl px-10 py-3 bg-blue-700 hover:bg-blue-800 transition-colors duration-300 rounded-full text-white btn-hover">Download
+                    Resume</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Me Section -->
+    <div id="about" class="w-full flex flex-col md:flex-row py-20 text-white bg-black bg-opacity-90">
+        <div class="w-full md:w-1/2">
+            <img src="C:\Users\Hassaan PC\OneDrive\Desktop\NewPortfolio\Image_3.avif" alt="Profile Image"
+                class="object-cover w-full h-full">
+        </div>
+        <div class="w-full md:w-1/2 px-10 flex flex-col justify-center animate-fadeInUp">
+            <h2 class="text-5xl mt-5 font-serif underline">About Me :</h2>
+            <p class="text-lg mt-10">
+                With two years of hands-on experience, I excel in crafting engaging, responsive web applications.
+                Proficient in HTML, CSS, JavaScript, React, and Next.js,
+                I bring a keen eye for detail and a passion for creating seamless user experiences.
+            </p>
+            <a href="#"
+                class="mt-5 inline-block px-4 py-2 text-lg bg-primary text-highlight rounded hover:bg-gray-700 transition-colors duration-300 btn-hover">Hire
+                Hassaan &gt;&gt;</a>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-black">Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div
+                    class="bg-primary text-highlight p-6 rounded-lg shadow-lg transition-transform duration-300 card-hover">
+                    <h3 class="text-2xl font-semibold mb-4">Custom Web Development</h3>
+                    <p class="text-white mb-4">Create unique and tailored websites that stand out.</p>
+                    <ul class="list-disc list-inside mb-4">
+                        <li><strong>What I Offer:</strong> Bespoke website design and development to match your vision.
+                        </li>
+                        <li><strong>Technologies:</strong> HTML, CSS, JavaScript, Bootstrap, Tailwind, React, Next.js.
+                        </li>
+                    </ul>
+                </div>
+                <!-- Service 2 -->
+                <div
+                    class="bg-primary text-highlight p-6 rounded-lg shadow-lg transition-transform duration-300 card-hover">
+                    <h3 class="text-2xl font-semibold mb-4">Responsive Design</h3>
+                    <p class="text-white mb-4">Ensure your website looks great on any device.</p>
+                    <ul class="list-disc list-inside mb-4">
+                        <li><strong>What I Offer:</strong> Designs that adapt seamlessly to mobile, tablet, and desktop.
+                        </li>
+                        <li><strong>Tools:</strong> Media queries, Flexbox, CSS Grid, Bootstrap, Tailwind.</li>
+                    </ul>
+                </div>
+                <!-- Service 3 -->
+                <div
+                    class="bg-primary text-highlight p-6 rounded-lg shadow-lg transition-transform duration-300 card-hover">
+                    <h3 class="text-2xl font-semibold mb-4">Performance Optimization</h3>
+                    <p class="text-white mb-4">Enhance your website’s speed and efficiency.</p>
+                    <ul class="list-disc list-inside mb-4">
+                        <li><strong>What I Offer:</strong> Techniques to improve load times and overall performance.
+                        </li>
+                        <li><strong>Techniques:</strong> Lazy loading, code minification, image optimization.</li>
+                    </ul>
+                </div>
+                <!-- Service 4 -->
+                <div
+                    class="bg-primary text-highlight p-6 rounded-lg shadow-lg transition-transform duration-300 card-hover">
+                    <h3 class="text-2xl font-semibold mb-4">Web Application Development</h3>
+                    <p class="text-white mb-4">Build dynamic applications with advanced functionality.</p>
+                    <ul class="list-disc list-inside mb-4">
+                        <li><strong>What I Offer:</strong> Interactive and responsive web apps for a seamless user
+                            experience.</li>
+                        <li><strong>Technologies:</strong> React, Next.js.</li>
+                    </ul>
+                </div>
+                <!-- Service 5 -->
+                <div
+                    class="bg-primary text-highlight p-6 rounded-lg shadow-lg transition-transform duration-300 card-hover">
+                    <h3 class="text-2xl font-semibold mb-4">Maintenance and Support</h3>
+                    <p class="text-white mb-4">Keep your website up-to-date and running smoothly.</p>
+                    <ul class="list-disc list-inside mb-4">
+                        <li><strong>What I Offer:</strong> Regular updates, bug fixes, and security enhancements.</li>
+                        <li><strong>Services:</strong> Ongoing technical support and maintenance.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-10 text-white">Let's Work Together</h2>
+        </div>
+        <div>
+            <div class="flex flex-col md:flex-row gap-10 mb-10" style="scale: 0.9;">
+                <!-- Contact Form -->
+                <div class="md:w-1/2 bg-white p-6 rounded-lg shadow-lg animate-fadeInUp contact-form py-10">
+                    <h3 class="text-2xl font-semibold mb-6 text-black">Contact Form</h3>
+                    <form>
+                        <div class="mb-4">
+                            <label for="name" class="block text-black">Name</label>
+                            <input type="text" id="name"
+                                class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-black">Email</label>
+                            <input type="email" id="email"
+                                class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-black">Message</label>
+                            <textarea id="message" rows="5"
+                                class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 btn-hover">Send
+                            Message</button>
+                    </form>
+                </div>
+                <div
+                    class="md:w-1/2 text-3xl bg-transparent my-auto p-6 rounded-lg shadow-lg animate-fadeInUp contact-form text-white">
+                    <h3 class="text-5xl font-bold mb-10 underline">Contact Us :</h3>
+                    <div class="py-4">
+                        <div>Email Address</div>
+                        <a href="mailto:muhammadhassaanrasool@gmail.com"
+                            class="underliner hover:text-blue-500 text-2xl">muhammadhassaanraool@gmail.com</a>
+                    </div>
+                    <div class="py-4">
+                        <div>Phone Number</div>
+                        <span>+92 3116380096</span>
+
+                    </div>
+                    <div class="py-4">
+                        <div> Address</div>
+                        <div>Babar Chowk Chungi Amer Sidhu Lahore</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-gray-300">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 py-10">
+                <!-- About Section -->
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Hassaan Rasool</h4>
+                    <p class="text-gray-400">
+                        Experienced Web Developer skilled in crafting sleek, responsive websites. Passionate about delivering 
+                        seamless user experiences through innovative design and optimized performance, with expertise in 
+                        front-end technologies and modern development tools to bring creative digital solutions to life.
+                    </p>
+                </div>
+                <!-- Contact Information -->
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Contact Info</h4>
+                    <p>Email: <a href="mailto:info@example.com"
+                            class="text-blue-400 hover:text-blue-500">muhammadhassaanraool@gmail.com</a></p>
+                    <p>Phone: +92 3116380096</p>
+                    <p>Address: Babar Chowk Chungi Amer Sidhu Lahore</p>
+                </div>
+                <!-- Social Links -->
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Follow Me</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-400">LinkedIn</a></li>
+                        <li><a href="#" class="hover:text-blue-400">GitHub</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center pt-5 border-t-2 border-gray-200">
+                <p>&copy; 2024 Hassaan Rasool. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function () {
+            var navbar = document.querySelectorAll('nav');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-black');
+            } else {
+                navbar.classList.remove('bg-black');
+            }
+        });
+    </script>
+</body>
+
+</html>
